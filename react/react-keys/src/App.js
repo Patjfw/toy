@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 
 class App extends Component {
@@ -27,36 +27,39 @@ class App extends Component {
   
   render() {
     return (
-      <div>
-        <b>How to use: </b>
-        First write something in the inputs
-        (or <a href='#' onClick={this.userInput}>simulate it</a>).
-        Then hit <em>Add item</em> and see what happens…
-        <hr/>
-        <button className='btn btn-primary' onClick={this.addItem.bind(this)}><b>Add item</b> to the beginning of the list</button>
-      
-
-        <h3>Dangerous <code>key=index</code></h3>
-        <form className="form-horizontal">
-            {this.state.list.map((todo, index) =>
-              <Item {...todo}
-              key={index} />
-            )}
-        </form>
+      <Fragment>
+        <a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318">Original link: index-as-a-key-is-an-anti-pattern</a>
+        <div>
+          <b>How to use: </b>
+          First write something in the inputs
+          (or <a href='#' onClick={this.userInput}>simulate it</a>).
+          Then hit <em>Add item</em> and see what happens…
+          <hr/>
+          <button className='btn btn-primary' onClick={this.addItem.bind(this)}><b>Add item</b> to the beginning of the list</button>
         
 
-        <h3>Better <code>key=id</code></h3>
-        <form className="form-horizontal">
-            {this.state.list.map((todo) =>
-              <Item {...todo}
-              key={todo.id} />
-            )}
-        </form>
-        
-        
-        <hr/>
-        <a href='https://medium.com/p/e0349aece318'>&laquo; Back to the article</a>.
-      </div>
+          <h3>Dangerous <code>key=index</code></h3>
+          <form className="form-horizontal">
+              {this.state.list.map((todo, index) =>
+                <Item {...todo}
+                key={index} />
+              )}
+          </form>
+          
+
+          <h3>Better <code>key=id</code></h3>
+          <form className="form-horizontal">
+              {this.state.list.map((todo) =>
+                <Item {...todo}
+                key={todo.id} />
+              )}
+          </form>
+          
+          
+          <hr/>
+          <a href='https://medium.com/p/e0349aece318'>&laquo; Back to the article</a>.
+        </div>
+      </Fragment>
     )
   }
 }
