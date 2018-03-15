@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  border: 2px solid red;
+  justify-content: space-between; }
+
+.flex-item {
+  width: 30%;
+  border: 1px solid black; }
+
+/*# sourceMappingURL=style.css.map */
